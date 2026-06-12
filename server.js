@@ -278,6 +278,8 @@ function verify(exercise, userCode) {
 
 // ── API Routes ────────────────────────────────────────────────────────────────
 
+app.get('/health', (_req, res) => res.json({ ok: true }));
+
 app.get('/api/config', (_req, res) => {
   res.json({
     languages: {
