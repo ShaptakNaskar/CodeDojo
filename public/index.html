@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Dojo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- ── Header ── -->
+    <header id="header">
+      <div id="brand">
+        <span class="logo">⚔</span>
+        <span class="brand-name">Code Dojo</span>
+      </div>
+
+      <nav id="lang-nav">
+        <button class="lang-btn active" data-lang="nodejs">Node.js</button>
+        <button class="lang-btn" data-lang="sql">SQL</button>
+        <button class="lang-btn" data-lang="php">PHP</button>
+      </nav>
+
+      <div id="header-right">
+        <div id="progress-info">
+          <span id="progress-text">0 / 0</span>
+          <div id="progress-track">
+            <div id="progress-fill"></div>
+          </div>
+        </div>
+        <button id="settings-btn" title="Settings">⚙</button>
+      </div>
+    </header>
+
+    <!-- ── Main Layout ── -->
+    <main id="main">
+
+      <!-- Left: Exercise panel -->
+      <aside id="exercise-panel">
+        <div id="exercise-meta">
+          <span id="exercise-counter"></span>
+          <h2 id="exercise-title"></h2>
+        </div>
+
+        <!-- Step dots -->
+        <div id="step-dots"></div>
+
+        <div id="exercise-body">
+          <div id="exercise-description"></div>
+
+          <div id="example-block">
+            <div class="section-label">Example</div>
+            <pre id="example-code"></pre>
+          </div>
+
+          <div id="sql-schema" style="display:none">
+            <div class="section-label">Database Tables</div>
+            <div id="schema-content"></div>
+          </div>
+        </div>
+
+        <div id="sidebar-actions">
+          <button id="hint-btn">💡 Get a Hint</button>
+          <div id="hint-box" style="display:none"></div>
+        </div>
+
+        <div id="sidebar-nav">
+          <button id="prev-btn" disabled>← Prev</button>
+          <button id="next-btn" disabled>Next →</button>
+        </div>
+      </aside>
+
+      <!-- Right: Editor + Output -->
+      <section id="editor-section">
+        <div id="editor-wrapper">
+          <div id="editor-topbar">
+            <span id="editor-filename"></span>
+            <div id="editor-controls">
+              <button id="reset-btn" title="Reset to starter code">↺ Reset</button>
+              <button id="run-btn">▶ Run</button>
+            </div>
+          </div>
+          <div id="editor-container"></div>
+        </div>
+
+        <div id="output-wrapper">
+          <div id="output-topbar">
+            <span>Output</span>
+            <span id="result-badge" style="display:none"></span>
+          </div>
+          <pre id="output-content"></pre>
+          <div id="result-message" style="display:none"></div>
+          <div id="congrats-overlay" style="display:none">
+            <div id="congrats-box">
+              <div class="congrats-icon">✓</div>
+              <div class="congrats-text">Nice work!</div>
+              <div class="congrats-sub" id="congrats-sub"></div>
+              <button id="congrats-next">Next Exercise →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" style="display:none">
+    <div id="settings-box">
+      <div id="settings-header">
+        <h3>Settings</h3>
+        <button id="settings-close">✕</button>
+      </div>
+      <label for="api-key-input">Groq API Key</label>
+      <input type="password" id="api-key-input" placeholder="gsk_..." />
+      <p class="settings-hint">Your key is saved in the browser only, never sent anywhere except Groq.</p>
+      <button id="save-settings-btn">Save</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs/loader.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
