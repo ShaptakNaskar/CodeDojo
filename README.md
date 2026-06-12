@@ -15,7 +15,7 @@ Code Dojo is a self-hosted learning environment where you write real code and se
 
 It's built for beginners who want to actually *do* things rather than just watch tutorials.
 
-![Code Dojo Screenshot](https://i.imgur.com/placeholder.png)
+![Code Dojo Screenshot](https://raw.githubusercontent.com/ShaptakNaskar/CodeDojo/refs/heads/main/Screenshot_20260612_115116.png)
 
 ---
 
